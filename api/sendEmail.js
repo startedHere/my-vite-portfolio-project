@@ -7,6 +7,14 @@ export default async function handler(req, res) {
 		return res.status(405).json({ message: 'Method Not Allowed' });
 	}
 
+	console.log('EMAILJS_SERVICE_ID:', process.env.EMAILJS_SERVICE_ID);
+	console.log('EMAILJS_TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID);
+	console.log('EMAILJS_PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY);
+
+	if (!process.env.EMAILJS_SERVICE_ID || !process.env.EMAILJS_TEMPLATE_ID || !process.env.EMAILJS_PUBLIC_KEY) {
+		return res.status(500).json({ message: 'Missing EmailJS environment variables' });
+	}
+
 	try {
 		// const { formData } = req.body;
 		const formData = req.body;
