@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 		const { formData } = req.body;
 		// Form data from frontend
 
-		const response = await emailjs.sendForm(
+		const response = await emailjs.send(
 			process.env.EMAILJS_SERVICE_ID,
 			process.env.EMAILJS_TEMPLATE_ID,
 			formData,
