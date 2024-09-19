@@ -397,14 +397,22 @@ function resetSpecificGSAPElements() {
 }
 
 //! /////////////////////////////////////////////////////////////////////
-const sendEmail = async formData => {
+const formData = new FormData(contactForm);
+
+// Convert FormData to an object for easier processing
+const formObj = {};
+formData.forEach((value, key) => {
+	formObj[key] = value;
+});
+
+const sendEmail = async formObj => {
 	try {
 		const response = await fetch('/api/sendEmail', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ formData }), // Send form data
+			body: JSON.stringify({ formData: formObj }), // Send form data
 		});
 
 		const result = await response.json();
@@ -477,13 +485,13 @@ const handleFormSubmit = async event => {
 		return;
 	}
 
-	const formData = new FormData(contactForm);
+	// const formData = new FormData(contactForm);
 
-	// Convert FormData to an object for easier processing
-	const formObj = {};
-	formData.forEach((value, key) => {
-		formObj[key] = value;
-	});
+	// // Convert FormData to an object for easier processing
+	// const formObj = {};
+	// formData.forEach((value, key) => {
+	// 	formObj[key] = value;
+	// });
 
 	// Set loading state to true
 	toggleLoadingState();
