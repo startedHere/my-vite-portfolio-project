@@ -396,7 +396,6 @@ function resetSpecificGSAPElements() {
 	});
 }
 
-/*
 //! /////////////////////////////////////////////////////////////////////
 const sendEmail = async formData => {
 	try {
@@ -424,9 +423,9 @@ const sendEmail = async formData => {
 	}
 };
 //! ////////////////////////////////////////////////////////////////////////////////
-*/
 
-const sendEmail = async () => {
+//_ ////////////////////////////////////////////////////////////////////////////////////////
+const sendEmail_01 = async () => {
 	try {
 		//_ Using 'await' for asynchronous operation (sendForm returns a promise)
 
@@ -451,6 +450,7 @@ const sendEmail = async () => {
 		return false; // Indicate failure
 	}
 };
+//_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //_ Function to display a message and clear it after a specified time
 // const showMessage = message => {
@@ -475,13 +475,13 @@ const handleFormSubmit = async event => {
 		return;
 	}
 
-	// const formData = new FormData(contactForm);
+	const formData = new FormData(contactForm);
 
-	// // Convert FormData to an object for easier processing
-	// const formObj = {};
-	// formData.forEach((value, key) => {
-	// 	formObj[key] = value;
-	// });
+	// Convert FormData to an object for easier processing
+	const formObj = {};
+	formData.forEach((value, key) => {
+		formObj[key] = value;
+	});
 
 	// Set loading state to true
 	toggleLoadingState();
