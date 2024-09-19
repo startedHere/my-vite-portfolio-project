@@ -412,7 +412,7 @@ const sendEmail = async formObj => {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ formData: formObj }), // Send form data
+			body: JSON.stringify({ formObj }), // Send form data
 		});
 
 		const result = await response.json();

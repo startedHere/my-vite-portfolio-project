@@ -8,8 +8,11 @@ export default async function handler(req, res) {
 	}
 
 	try {
-		const { formData } = req.body;
+		// const { formData } = req.body;
+		const formData = req.body;
 		// Form data from frontend
+
+		console.log(req.body);
 
 		if (!formData) {
 			return res.status(400).json({ message: 'Form data missing' });
