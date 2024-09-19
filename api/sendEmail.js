@@ -23,10 +23,22 @@ export default async function handler(req, res) {
 			}),
 		});
 
-		const responseBody = await response.json();
+		// Read the raw response text
+		const responseText = await response.text();
+
+		// Log the raw response text
+		console.log('Raw response text:', responseText);
+
+		// Attempt to parse the response text as JSON
+		let responseBody;
+		try {
+			responseBody = JSON.parse(responseText);
+		} catch (e) {
+			responseBody = { message: 'Response is not valid JSON' };
+		}
 
 		if (!response.ok) {
-			throw new Error(`Failed to send email: ${responseBody.message}`);
+			throw new Error(`Failed to send email: ${responseBody.message || responseText}`);
 		}
 
 		res.status(200).json({ message: 'Email sent successfully', response: responseBody });
