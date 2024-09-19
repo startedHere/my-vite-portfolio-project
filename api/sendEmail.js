@@ -17,14 +17,14 @@ export default async function handler(req, res) {
 			formData,
 			process.env.EMAILJS_PUBLIC_KEY
 		);
-		if (response.status === 200) {
-			console.log('Email sent successfully!', response);
-			return true; // Indicate success
-		} else {
-			console.error('Failed to send email, response:', response);
-			return false; // Indicate failure
-		}
-		// res.status(200).json({ message: 'Email sent successfully', response });
+		// if (response.status === 200) {
+		// 	console.log('Email sent successfully!', response);
+		// 	return true; // Indicate success
+		// } else {
+		// 	console.error('Failed to send email, response:', response);
+		// 	return false; // Indicate failure
+		// }
+		res.status(200).json({ message: 'Email sent successfully', response });
 	} catch (error) {
 		console.error('Error sending email:', error);
 		res.status(500).json({ message: 'Failed to send email', error });
