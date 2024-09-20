@@ -405,14 +405,14 @@ formData.forEach((value, key) => {
 	formObj[key] = value;
 });
 
-const sendEmail = async formObj => {
+const sendEmail = async formData => {
 	try {
 		const response = await fetch('/api/sendEmail', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ formObj }), // Send form data
+			body: JSON.stringify(formData),
 		});
 
 		const result = await response.json();
