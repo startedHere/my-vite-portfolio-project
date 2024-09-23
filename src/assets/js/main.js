@@ -406,7 +406,7 @@ formData.forEach((value, key) => {
 });
 
 // Call sendEmail with formObj
-const success = await sendEmail(formObj);
+// const success = await sendEmail(formObj);
 
 const sendEmail = async formObj => {
 	// const sendEmail = async formData => {
