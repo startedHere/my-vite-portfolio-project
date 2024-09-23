@@ -503,8 +503,8 @@ const handleFormSubmit = async event => {
 	try {
 		// Attempt to send the email
 
-		// const isEmailSent = await sendEmail();
-		const isEmailSent = await sendEmail(formObj);
+		const isEmailSent = await sendEmail();
+		// const isEmailSent = await sendEmail(formObj);
 
 		if (isEmailSent) {
 			// Show success message
