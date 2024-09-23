@@ -423,7 +423,12 @@ const sendEmail = async formObj => {
 			body: JSON.stringify(formObj),
 		});
 
+		console.log(formObj);
+
 		const result = await response.json();
+
+		console.log(result);
+
 		if (response.ok) {
 			console.log(result.message);
 			return true; // Indicate success
