@@ -8,6 +8,8 @@ export default async function handler(req, res) {
 	try {
 		const { first_name, last_name, email } = req.body;
 
+		console.log({ first_name, last_name, email });
+
 		// Create transporter using SMTP
 		const transporter = nodemailer.createTransport({
 			host: process.env.SMTP_HOST,
@@ -30,6 +32,8 @@ export default async function handler(req, res) {
 			// html: `<p>${message}</p>`, // HTML version
 			// html: `<p>${user_project}</p>`, // HTML version
 		};
+
+		console.log({ first_name, last_name, email });
 
 		// Send email
 		await transporter.sendMail(mailOptions);
