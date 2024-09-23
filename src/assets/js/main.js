@@ -494,12 +494,15 @@ const handleFormSubmit = async event => {
 	}
 
 	const formData = new FormData(contactForm);
+	console.log(formData);
 
 	// // Convert FormData to an object for easier processing
 	const formObj = {};
 	formData.forEach((value, key) => {
 		formObj[key] = value;
 	});
+
+	console.log('Form Data to be sent:', formObj);
 
 	// Set loading state to true
 	toggleLoadingState();
