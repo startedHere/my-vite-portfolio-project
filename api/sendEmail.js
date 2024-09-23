@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 			from: `"${first_name}" "${last_name}" <${email}>`, // sender address
 			to: 'ugwu.chukwuma@outlook.com', // receiver's email
 			subject: `New contact from ${first_name}`,
-			text: message, // plain text
+			text: '', // plain text
 			// html: `<p>${message}</p>`, // HTML version
 			html: `<p>${user_project}</p>`, // HTML version
 		};
