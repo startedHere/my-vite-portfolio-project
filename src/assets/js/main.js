@@ -396,14 +396,18 @@ function resetSpecificGSAPElements() {
 	});
 }
 
+console.log(contactForm);
+
 //! /////////////////////////////////////////////////////////////////////
-const formData = new FormData(contactForm);
+// const formData = new FormData(contactForm);
+
+// console.log(contactForm);
 
 // Convert FormData to an object for easier processing
-const formObj = {};
-formData.forEach((value, key) => {
-	formObj[key] = value;
-});
+// const formObj = {};
+// formData.forEach((value, key) => {
+// 	formObj[key] = value;
+// });
 
 // Call sendEmail with formObj
 // const success = await sendEmail(formObj);
@@ -489,13 +493,13 @@ const handleFormSubmit = async event => {
 		return;
 	}
 
-	// const formData = new FormData(contactForm);
+	const formData = new FormData(contactForm);
 
 	// // Convert FormData to an object for easier processing
-	// const formObj = {};
-	// formData.forEach((value, key) => {
-	// 	formObj[key] = value;
-	// });
+	const formObj = {};
+	formData.forEach((value, key) => {
+		formObj[key] = value;
+	});
 
 	// Set loading state to true
 	toggleLoadingState();
