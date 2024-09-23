@@ -6,9 +6,9 @@ export default async function handler(req, res) {
 	}
 
 	try {
-		const { first_name, last_name, email } = req.body;
+		const { first_name, last_name, email, user_project } = req.body;
 
-		console.log({ first_name, last_name, email });
+		console.log({ first_name, last_name, email, user_project });
 
 		// Create transporter using SMTP
 		const transporter = nodemailer.createTransport({
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 			subject: `New contact from ${first_name}`,
 			text: '', // plain text
 			// html: `<p>${message}</p>`, // HTML version
-			// html: `<p>${user_project}</p>`, // HTML version
+			html: `<p>${user_project}</p>`, // HTML version
 		};
 
 		console.log({ first_name, last_name, email });
