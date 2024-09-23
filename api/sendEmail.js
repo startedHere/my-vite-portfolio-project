@@ -2,14 +2,11 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
 	if (req.method !== 'POST') {
-		// return res.status(405).json({ message: 'Method Not Allowed' });
-		//_ using the (return) keyword first in an IF STATEMENT prevents all other line codes after IT from running...
+		return res.status(405).json({ message: 'Method Not Allowed' });
+	}
 
+	try {
 		const { first_name, last_name, email, user_project } = req.body;
-
-		if (!first_name || !last_name || !email || !user_project) {
-			return res.status(400).json({ message: 'All fields are required' });
-		}
 
 		// Create transporter using SMTP
 		const transporter = nodemailer.createTransport({
@@ -34,16 +31,12 @@ export default async function handler(req, res) {
 			html: `<p>${user_project}</p>`, // HTML version
 		};
 
-		try {
-			// Send email
-			await transporter.sendMail(mailOptions);
+		// Send email
+		await transporter.sendMail(mailOptions);
 
-			res.status(200).json({ message: 'Email sent successfully' });
-		} catch (error) {
-			console.error('Error sending email:', error);
-			res.status(500).json({ message: 'Failed to send email', error });
-		}
-	} else {
-		res.status(405).json({ message: 'Method Not Allowed' });
+		res.status(200).json({ message: 'Email sent successfully' });
+	} catch (error) {
+		console.error('Error sending email:', error);
+		res.status(500).json({ message: 'Failed to send email', error });
 	}
 }
