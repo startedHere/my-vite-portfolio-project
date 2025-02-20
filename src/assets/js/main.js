@@ -59,11 +59,11 @@ const blurHeader = () => {
 
 window.addEventListener('scroll', blurHeader);
 
-//! Mandal Effect For MY MIND Section
+//! Mandala Effect For MY MIND Section
 ///////////////////////////////////////////////
-//_ Using An IIFE....
 
 /*
+//_ Using An IIFE....
 (function () {
 	// Get the element with ID 'mandala'
 	const mandalaEffect = document.getElementById('mandala');
@@ -130,6 +130,10 @@ window.addEventListener('scroll', blurHeader);
 */
 
 //_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// const aboutDescription = document.querySelector('.about__description');
+
+/*
+//_ /////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', function () {
 	function setupIntersectionObserver(mandalaEffect) {
 		const observer = new IntersectionObserver(
@@ -159,7 +163,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	initMandalaEffect();
 });
+//_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
+document.addEventListener('DOMContentLoaded', () => {
+	// Quote Fetching with GSAP Animation
+	const aboutDescription = document.querySelector('.about__description');
+
+	const fetchQuote = async () => {
+		try {
+			// const response = await fetch("https://your-api-endpoint.com/quotes");
+			const response = await fetch('https://quote-generator-api-zeta.vercel.app/api/quotes');
+			const data = await response.json();
+
+			if (data && data.text) {
+				// Animate out before changing text
+				gsap.to(aboutDescription, {
+					opacity: 0,
+					duration: 0.5,
+					onComplete: () => {
+						aboutDescription.textContent = data.text;
+						// Animate in after updating text
+						gsap.to(aboutDescription, { opacity: 1, duration: 0.5 });
+					},
+				});
+			} else {
+				aboutDescription.textContent = 'No quote available.';
+			}
+		} catch (error) {
+			console.error('Error fetching quote:', error);
+			aboutDescription.textContent = 'Failed to load quote.';
+		}
+	};
+
+	// Fetch the first quote immediately
+	fetchQuote();
+
+	// Fetch a new quote every 10 seconds
+	setInterval(fetchQuote, 10000);
+
+	// Mandala Effect with Intersection Observer
+	function setupIntersectionObserver(mandalaEffect) {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						mandalaEffect.classList.add('animated');
+					} else {
+						mandalaEffect.classList.remove('animated');
+					}
+				});
+			},
+			// { threshold: 0.2 } // Start animation when 20% of the element is in view
+			{ threshold: 0.2 } //  Start Animation based on the percentage of it that is On-focus(In View-port)
+		);
+
+		observer.observe(mandalaEffect);
+	}
+
+	function initMandalaEffect() {
+		const mandalaEffect = document.getElementById('mandala');
+
+		if (mandalaEffect) {
+			// Setup the Intersection Observer
+			setupIntersectionObserver(mandalaEffect);
+		}
+	}
+
+	// Initialize Mandala Effect
+	initMandalaEffect();
+});
 //! ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // })(window.Mozilla);
 // 	'undefined' != typeof document.hidden && (document.addEventListener('visibilitychange', i, !1), window.Mozilla.run(i));
@@ -310,7 +383,7 @@ checkbox.addEventListener('click', () => {
 });
 
 //_ ///////////////////////////////////////////////////////////////////////////////////////////
-//! Email js (For Form Submission)...
+//! For Form Submission.......
 //////////////////////////////////////////////////////////////////
 // Selecting elements from the HTML document using their IDs
 const contactForm = document.getElementById('contactBeta-form');
@@ -551,7 +624,7 @@ contactForm.addEventListener('submit', handleFormSubmit);
 ///////////////////////////////////////////////////////////////
 const scrollUp = () => {
 	const scrollUp = document.getElementById('scroll-up');
-	// When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+	// When the scroll is higher than 350 viewport height, add the show-scroll class to the <a> tag with the scrollup class
 	// this.scrollY >= 350 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll');
 
 	window.scrollY >= 350 ? scrollUp.classList.add('show-scroll') : scrollUp.classList.remove('show-scroll');
@@ -600,6 +673,8 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive);
 */
 
+//! Scroll Sections Active Link...
+////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded', () => {
 	const sections = document.querySelectorAll('section');
 	const navLinks = document.querySelectorAll('.nav__link');
@@ -648,8 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Adds the onScroll function as an event listener for the window's scroll event
 	window.addEventListener('scroll', onScroll);
 });
-
-//! /////////////////////////////////////////////////////////////////////////////////
+//! ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // const scrollActive = () => {
 // 	const scrollY = window.pageYOffset;
@@ -756,11 +830,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
-
 //! /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-
-//_ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 //! //////////////////////////////////////////////////////////////////////////////////
@@ -841,12 +912,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
-
 //! /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
 // ! Activate Dark Mode...
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 document.addEventListener('DOMContentLoaded', () => {
 	const toggleButton = document.getElementById('theme-button');
