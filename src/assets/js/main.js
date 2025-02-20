@@ -168,13 +168,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Quote Fetching with GSAP Animation
-	const aboutDescription = document.querySelector('.about__description');
+
+	const aboutDescription = document.querySelector('.mymind__description');
 
 	const fetchQuote = async () => {
 		try {
 			// const response = await fetch("https://your-api-endpoint.com/quotes");
-			const response = await fetch('https://quote-generator-api-zeta.vercel.app/api/quotes');
+			const response = await fetch('https://quote-generator-api-zeta.vercel.app/api/quotes/random');
 			const data = await response.json();
+
+			console.log('API Response:', data); // Log full response
 
 			if (data && data.text) {
 				// Animate out before changing text
@@ -188,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					},
 				});
 			} else {
+				console.warn('No quote found in response:', data);
 				aboutDescription.textContent = 'No quote available.';
 			}
 		} catch (error) {
@@ -200,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	fetchQuote();
 
 	// Fetch a new quote every 10 seconds
-	setInterval(fetchQuote, 10000);
+	setInterval(fetchQuote, 600000);
 
 	// Mandala Effect with Intersection Observer
 	function setupIntersectionObserver(mandalaEffect) {
