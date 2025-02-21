@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 import nodemailer from 'nodemailer';
 
@@ -34,13 +34,13 @@ export default async function handler(req, res) {
 		// });
 
 		//_ Verify SMTP connection
-		try {
-			await transporter.verify();
-			console.log('SMTP Server is ready to take messages!');
-		} catch (verifyError) {
-			console.error('SMTP Connection Error:', verifyError);
-			return res.status(500).json({ message: 'SMTP Connection Error', error: verifyError });
-		}
+		// try {
+		// 	await transporter.verify();
+		// 	console.log('SMTP Server is ready to take messages!');
+		// } catch (verifyError) {
+		// 	console.error('SMTP Connection Error:', verifyError);
+		// 	return res.status(500).json({ message: 'SMTP Connection Error', error: verifyError });
+		// }
 
 		// Email content
 		const mailOptions = {
