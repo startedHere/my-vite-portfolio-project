@@ -672,14 +672,18 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	/* max-width: 550px; */
 	/* Constrain mandala size */
 
-	margin: 0 auto; /* Center within grid cell */
-	overflow: hidden; /* Prevent scattering overflow */
-	isolation: isolate; /* Avoid parent transform issues */
+	margin: 0 auto;
+	/* Center within grid cell */
+
+	overflow: hidden;
+	/* Prevent scattering overflow */
+
+	isolation: isolate;
+	/* Avoid parent transform issues */
 
 	row-gap: 2.5rem;
 	align-items: center;
 	justify-content: center;
-	/* overflow: hidden; */
 }
 
 /* Wrapper for SVG stability */
@@ -701,8 +705,8 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	font-weight: 300;
 	user-select: none;
 
-	/* transform-origin: 50% 50%; */
-	/* -webkit-transform-origin: 50% 50%; */
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
 
 	/* transform-origin: 337.5px 337.5px;  */
 	/* Explicit center */
@@ -719,6 +723,7 @@ input[type='checkbox']:checked ~ .menu .bottom {
 
 .mandala-container svg .mandala-ring {
 	transform-origin: 337.5px 337.5px;
+	-webkit-transform-origin: 337.5px 337.5px;
 	/* Explicit center */
 
 	/* transform-origin: center; */
@@ -730,15 +735,6 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	/* transform-origin: 50% 50%; */
 	/* -webkit-transform-origin: 50% 50%; */
 
-	/* width: 675px; */
-	/* height: 675px; */
-	/* display: block; */
-
-	/* justify-content: center; */
-
-	/* transform-origin: 337.5px 337.5px; */
-	/* Center of 675x675 SVG */
-
 	/* transform-box: fill-box;  */
 	/* WebKit fix */
 
@@ -748,6 +744,11 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	/* transform: translateZ(0); */
 	/* Force GPU acceleration */
 
+	/* width: 675px; */
+	/* height: 675px; */
+	/* display: block; */
+
+	/* justify-content: center; */
 	/* overflow: visible; */
 }
 
@@ -892,6 +893,7 @@ input[type='checkbox']:checked ~ .menu .bottom {
 .mandala-container.animated.animate-colors svg > text > textPath > tspan {
 	fill: var(--mandala-primary);
 	animation: mandala-color-change 50s infinite ease-in-out;
+	-webkit-animation: mandala-color-change 50s infinite ease-in-out;
 
 	/* animation: mandala-color-change 50s infinite; */
 	/* -webkit-animation: mandala-color-change 50s infinite; */
@@ -994,11 +996,14 @@ input[type='checkbox']:checked ~ .menu .bottom {
 .mymind__data .section__subtitle a:active {
 	color: var(--first-color-second);
 	/* color: blue; Example: Change color when clicked */
-	text-decoration: none; /* Example: Remove underline when clicked */
+
+	text-decoration: none;
+	/* Example: Remove underline when clicked */
 }
 
 .mymind__data .section__subtitle a:visited {
-	color: var(--first-color-second); /* Keep the same color after being visited */
+	color: var(--first-color-second);
+	/* Keep the same color after being visited */
 }
 
 /*!=============== SKILLS ===============*/
