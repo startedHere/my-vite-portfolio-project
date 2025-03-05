@@ -869,24 +869,24 @@ input[type='checkbox']:checked ~ .menu .bottom {
 } */
 
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-1 {
-	animation: rotation 50s linear infinite;
-	-webkit-animation: rotation 50s linear infinite;
+	animation: rotation 505s linear infinite;
+	-webkit-animation: rotation 505s linear infinite;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-2 {
-	animation: rotation 48s linear infinite reverse;
-	-webkit-animation: rotation 48s linear infinite reverse;
+	animation: rotation 480s linear infinite reverse;
+	-webkit-animation: rotation 480s linear infinite reverse;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-3 {
-	animation: rotation 51s linear infinite;
-	-webkit-animation: rotation 51s linear infinite;
+	animation: rotation 515s linear infinite;
+	-webkit-animation: rotation 515s linear infinite;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-4 {
-	animation: rotation 42s linear infinite reverse;
-	-webkit-animation: rotation 42s linear infinite reverse;
+	animation: rotation 425s linear infinite reverse;
+	-webkit-animation: rotation 425s linear infinite reverse;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-5 {
-	animation: rotation 41s linear infinite;
-	-webkit-animation: rotation 41s linear infinite;
+	animation: rotation 415s linear infinite;
+	-webkit-animation: rotation 415s linear infinite;
 }
 
 .mandala-container.animated.animate-colors svg > text > textPath > tspan {
