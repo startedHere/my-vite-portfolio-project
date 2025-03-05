@@ -696,39 +696,54 @@ input[type='checkbox']:checked ~ .menu .bottom {
 
 	max-width: 550px;
 	display: block;
-	opacity: 0.55;
+	opacity: 0.75;
 	font-size: 1.5rem;
 	font-weight: 300;
 	user-select: none;
 
-	transform-origin: 50% 50%;
-	-webkit-transform-origin: 50% 50%;
+	/* transform-origin: 50% 50%; */
+	/* -webkit-transform-origin: 50% 50%; */
 
-	/* transform-origin: center; */
-	/* -webkit-transform-origin: center; */
+	/* transform-origin: 337.5px 337.5px;  */
+	/* Explicit center */
+
+	/* transform-box: fill-box; */
+	/* WebKit fix */
+
+	/* will-change: transform; */
+	/* Optimize rendering */
+
+	/* transform: translateZ(0); */
+	/* Force GPU acceleration */
 }
 
 .mandala-container svg .mandala-ring {
+	transform-origin: 337.5px 337.5px;
+	/* Explicit center */
+
 	/* transform-origin: center; */
 	/* -webkit-transform-origin: center; */
 
 	/* transform-origin: 337.5px 337.5px; */
 	/* Center of 675x675 SVG */
 
-	transform-origin: 50% 50%;
-	-webkit-transform-origin: 50% 50%;
+	/* transform-origin: 50% 50%; */
+	/* -webkit-transform-origin: 50% 50%; */
 
-	width: 675px;
-	height: 675px;
-	display: block;
+	/* width: 675px; */
+	/* height: 675px; */
+	/* display: block; */
 
-	justify-content: center;
+	/* justify-content: center; */
 
 	/* transform-origin: 337.5px 337.5px; */
 	/* Center of 675x675 SVG */
 
-	transform-box: fill-box; /* WebKit fix */
-	will-change: transform; /* Optimize for WebKit */
+	/* transform-box: fill-box;  */
+	/* WebKit fix */
+
+	/* will-change: transform; */
+	/* Optimize for WebKit */
 
 	/* transform: translateZ(0); */
 	/* Force GPU acceleration */
@@ -854,32 +869,35 @@ input[type='checkbox']:checked ~ .menu .bottom {
 } */
 
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-1 {
-	animation: rotation 505s linear infinite;
-	-webkit-animation: rotation 505s linear infinite;
+	animation: rotation 50s linear infinite;
+	-webkit-animation: rotation 50s linear infinite;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-2 {
-	animation: rotation 480s linear infinite reverse;
-	-webkit-animation: rotation 480s linear infinite reverse;
+	animation: rotation 48s linear infinite reverse;
+	-webkit-animation: rotation 48s linear infinite reverse;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-3 {
-	animation: rotation 515s linear infinite;
-	-webkit-animation: rotation 515s linear infinite;
+	animation: rotation 51s linear infinite;
+	-webkit-animation: rotation 51s linear infinite;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-4 {
-	animation: rotation 425s linear infinite reverse;
-	-webkit-animation: rotation 425s linear infinite reverse;
+	animation: rotation 42s linear infinite reverse;
+	-webkit-animation: rotation 42s linear infinite reverse;
 }
 .mandala-container.animated .mandala-rotate > svg .mandala-accent-5 {
-	animation: rotation 415s linear infinite;
-	-webkit-animation: rotation 415s linear infinite;
+	animation: rotation 41s linear infinite;
+	-webkit-animation: rotation 41s linear infinite;
 }
 
 .mandala-container.animated.animate-colors svg > text > textPath > tspan {
 	fill: var(--mandala-primary);
-	animation: mandala-color-change 50s infinite;
-	-webkit-animation: mandala-color-change 50s infinite;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
+	animation: mandala-color-change 50s infinite ease-in-out;
+
+	/* animation: mandala-color-change 50s infinite; */
+	/* -webkit-animation: mandala-color-change 50s infinite; */
+
+	/* animation-timing-function: ease-in-out; */
+	/* -webkit-animation-timing-function: ease-in-out; */
 }
 .mandala-container.animated.animate-colors .mandala-accent-1 > textPath > tspan {
 	fill: var(--mandala-accent-1);
