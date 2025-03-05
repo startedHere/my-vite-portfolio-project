@@ -1,0 +1,431 @@
+/*=============== DISCOVER ===============*/
+.mymind {
+	/* background: #000; */
+	/* background: inherit; */
+	background-color: var(--container-color);
+
+	/* display: grid; */
+	/* display: flex; */
+
+	/* grid-template-columns: 100%; */
+
+	align-items: center;
+	justify-content: center;
+}
+
+/* .c-mdn-header .c-mdn-header-content {
+	grid-column: 1;
+	grid-row: 1;
+	padding-top: 0;
+	z-index: 2;
+} */
+
+/* .c-mdn-header .mzp-c-notification-bar {
+	margin-bottom: 64px;
+} */
+
+/* .c-mdn-header .c-mdn-header-title {
+	color: #e0e0e6;
+	font-weight: 700;
+} */
+
+/* .c-mdn-header .mandala-wrapper {
+	grid-column: 1;
+	grid-row: 1;
+	top: 100px;
+	bottom: 50%;
+	right: 50%;
+	position: inherit;
+	align-items: center;
+	justify-content: center;
+	height: 550px;
+	overflow: hidden;
+	transition: all 1s ease-in-out;
+	width: -200%;
+	z-index: 1;
+} */
+/* height: 200%; */
+
+/* .c-mdn-header-intro {
+	margin-bottom: 48px;
+} */
+/* .c-mdn-header-tagline {
+	font-size: 21px;
+	font-size: 1.3125rem;
+	line-height: 1.5;
+} */
+
+/* @supports (--css: variables) {
+	.c-mdn-header-tagline {
+		font-size: var(--body-xl-size);
+		line-height: var(--body-line-height);
+	}
+} */
+
+/* .c-mdn-header-tagline em,
+.c-mdn-header-title em {
+	border-bottom: 2px solid #ff6bba;
+	font-style: normal;
+} */
+
+.mandala-container {
+	--mandala-primary: #52525e;
+	--mandala-accent-1: #c689ff;
+	--mandala-accent-2: #ffd567;
+	--mandala-accent-3: #88ffd1;
+	--mandala-accent-4: #ff9aa2;
+	--mandala-accent-5: #e0e0e6;
+
+	/* position: relative; Anchor for SVG positioning */
+	display: block; /* Changed from flex since it's a section */
+	width: 100%; /* Full width of its parent */
+	max-width: 550px; /* Match SVG max-width */
+	margin: 0 auto; /* Center horizontally */
+
+	/* overflow: hidden; Prevent overflow issues */
+
+	/* display: flex; */
+
+	row-gap: 2.5rem;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	/* display: flex; */
+	/* position: relative; */
+	/* height: 100%; */
+	/* width: 100%; */
+	/* right: 40px; */
+	/* transform: translate(20rem, -6rem); */
+	/* -webkit-transform: translate(12rem, -8rem); */
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* _ /////////////////////////////////////////////////////// */
+@-webkit-keyframes rotation {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+/* _ /////////////////////////////////////////////////////// */
+
+@keyframes mandala-color-change {
+	0% {
+		fill: var(--mandala-primary);
+	}
+	10% {
+		fill: var(--mandala-primary);
+	}
+	15% {
+		fill: var(--mandala-accent-1);
+	}
+	20% {
+		fill: var(--mandala-primary);
+	}
+	25% {
+		fill: var(--mandala-primary);
+	}
+	30% {
+		fill: var(--mandala-accent-2);
+	}
+	35% {
+		fill: var(--mandala-primary);
+	}
+	40% {
+		fill: var(--mandala-primary);
+	}
+	50% {
+		fill: var(--mandala-accent-3);
+	}
+	55% {
+		fill: var(--mandala-primary);
+	}
+	60% {
+		fill: var(--mandala-primary);
+	}
+	65% {
+		fill: var(--mandala-accent-4);
+	}
+	70% {
+		fill: var(--mandala-primary);
+	}
+	to {
+		fill: var(--mandala-primary);
+	}
+}
+
+/*_ ///////////////////////////////////////////////////////////////////////// */
+@-webkit-keyframes mandala-color-change {
+	0% {
+		fill: var(--mandala-primary);
+	}
+	10% {
+		fill: var(--mandala-primary);
+	}
+	15% {
+		fill: var(--mandala-accent-1);
+	}
+	20% {
+		fill: var(--mandala-primary);
+	}
+	25% {
+		fill: var(--mandala-primary);
+	}
+	30% {
+		fill: var(--mandala-accent-2);
+	}
+	35% {
+		fill: var(--mandala-primary);
+	}
+	40% {
+		fill: var(--mandala-primary);
+	}
+	50% {
+		fill: var(--mandala-accent-3);
+	}
+	55% {
+		fill: var(--mandala-primary);
+	}
+	60% {
+		fill: var(--mandala-primary);
+	}
+	65% {
+		fill: var(--mandala-accent-4);
+	}
+	70% {
+		fill: var(--mandala-primary);
+	}
+	to {
+		fill: var(--mandala-primary);
+	}
+}
+/*_ /////////////////////////////////////////////////////////////////////// */
+
+.mandala-container svg {
+	width: 100%;
+	height: auto;
+	max-width: 550px;
+
+	/* height: 500px; */
+	/* Adjust the height as needed */
+
+	/* width: 550px; */
+	/* Adjust the width as needed */
+
+	/* max-width: 100%; */
+
+	/* margin-top: -15%; */
+
+	/* margin-left: 15%; */
+	/* margin-left: auto; */
+
+	/* display: block; */
+	opacity: 0.55;
+
+	/* font-size: 1.5rem; */
+	/* font-weight: 300; */
+	/* user-select: none; */
+	/* overflow: hidden; */
+	/* opacity: 0.55; */
+	/* opacity: 0; */
+}
+
+.mandala-container svg .mandala-ring {
+	/* transform-origin: 50% 50%; */
+	/* -webkit-transform-origin: 50% 50%; */
+
+	transform-origin: center;
+	-webkit-transform-origin: center;
+}
+
+/* .mandala-container svg .mandala-ring { */
+/* transform-origin: 50% 50%; */
+/* -webkit-transform-origin: 50% 50%; */
+
+/* transform-origin: center; */
+/* -webkit-transform-origin: center; */
+/* } */
+
+.mandala-container.animated .mandala-rotate > svg .mandala-accent-1 {
+	animation: rotation 505s linear infinite;
+	-webkit-animation: rotation 505s linear infinite;
+}
+.mandala-container.animated .mandala-rotate > svg .mandala-accent-2 {
+	animation: rotation 480s linear infinite reverse;
+	-webkit-animation: rotation 480s linear infinite reverse;
+}
+.mandala-container.animated .mandala-rotate > svg .mandala-accent-3 {
+	animation: rotation 515s linear infinite;
+	-webkit-animation: rotation 515s linear infinite;
+}
+.mandala-container.animated .mandala-rotate > svg .mandala-accent-4 {
+	animation: rotation 425s linear infinite reverse;
+	-webkit-animation: rotation 425s linear infinite reverse;
+}
+.mandala-container.animated .mandala-rotate > svg .mandala-accent-5 {
+	animation: rotation 415s linear infinite;
+	-webkit-animation: rotation 415s linear infinite;
+}
+
+.mandala-container.animated.animate-colors svg > text > textPath > tspan {
+	fill: var(--mandala-primary);
+	animation: mandala-color-change 50s infinite;
+	-webkit-animation: mandala-color-change 50s infinite;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+.mandala-container.animated.animate-colors .mandala-accent-1 > textPath > tspan {
+	fill: var(--mandala-accent-1);
+	animation-delay: -15s;
+	-webkit-animation-delay: -15s;
+}
+.mandala-container.animated.animate-colors .mandala-accent-2 > textPath > tspan {
+	fill: var(--mandala-accent-2);
+	animation-delay: -20s;
+	-webkit-animation-delay: -20s;
+}
+.mandala-container.animated.animate-colors .mandala-accent-3 > textPath > tspan {
+	fill: var(--mandala-accent-3);
+	animation-delay: -30s;
+	-webkit-animation-delay: -30s;
+}
+.mandala-container.animated.animate-colors .mandala-accent-4 > textPath > tspan {
+	fill: var(--mandala-accent-4);
+	animation-delay: -5s;
+	-webkit-animation-delay: -5s;
+}
+.mandala-container.animated.animate-colors .mandala-accent-5 > textPath > tspan {
+	fill: var(--mandala-accent-4);
+	animation-delay: -40s;
+	-webkit-animation-delay: -40s;
+}
+/* .mandala-container svg {
+	/* height: 100%; */
+/* width: 55%; */
+/* font-size: 1.5rem; */
+/* font-weight: 300; */
+/* user-select: none; */
+/* margin-left: 20%; */
+/* justify-content: center; */
+/* align-items: center; */
+/* opacity: 55%; */
+/* } */
+
+/* .mandala-container svg { */
+/* width: 100%; */
+/* height: auto; */
+/* max-width: 550px; */
+
+/* height: 500px; */
+/* Adjust the height as needed */
+
+/* width: 550px; */
+/* Adjust the width as needed */
+
+/* max-width: 100%; */
+
+/* margin-top: -15%; */
+
+/* margin-left: 15%; */
+/* margin-left: auto; */
+
+/* font-size: 1.5rem; */
+/* font-weight: 300; */
+/* user-select: none; */
+/* opacity: 0.55; */
+/* overflow: hidden; */
+/* } */
+
+/* .mandala-container svg .mandala-ring { */
+/* transform-origin: 50% 50%; */
+/* -webkit-transform-origin: 50% 50%; */
+
+/* transform-origin: center; */
+/* -webkit-transform-origin: center; */
+/* } */
+
+.mandala-container svg > text {
+	fill: var(--mandala-primary);
+}
+.mandala-container .mandala-accent-1 {
+	font-size: 1.5rem;
+}
+.mandala-container .mandala-accent-2 {
+	font-size: 1.3rem;
+}
+.mandala-container .mandala-accent-3 {
+	font-size: 1.2rem;
+}
+.mandala-container .mandala-accent-4 {
+	font-size: 1.1rem;
+}
+.mandala-container .mandala-accent-5 {
+	font-size: 1rem;
+}
+
+.mymind__data {
+	text-align: center;
+	justify-content: center;
+
+	/* margin-top: -20%; */
+}
+
+/* .mymind__description {
+	margin-top: -1rem;
+	margin-bottom: 4rem;
+} */
+
+/* .mymind__data .section__subtitle a:hover {
+    color: red; /* Example: Change text color on hover */
+/* text-decoration: underline; Underline on hover */
+/* } */
+
+/* .mymind__data .section__subtitle a:active {
+    color: blue; /* Example: Change color when clicked */
+/* text-decoration: none; Example: Remove underline when clicked */
+/* } */
+
+.mymind__data .section__subtitle a {
+	position: relative;
+	text-decoration: none;
+	/* color: #007bff; */
+	/* font-weight: bold; */
+}
+
+.mymind__data .section__subtitle a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 100%;
+	height: 2px;
+	/* background-color: #ff6600; */
+	background-color: var(--first-color);
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.mymind__data .section__subtitle a:hover::after {
+	transform: scaleX(1);
+}
+
+.mymind__data .section__subtitle a:active {
+	color: var(--first-color-second);
+	/* color: blue; Example: Change color when clicked */
+	text-decoration: none; /* Example: Remove underline when clicked */
+}
+
+.mymind__data .section__subtitle a:visited {
+	color: var(--first-color-second); /* Keep the same color after being visited */
+}
