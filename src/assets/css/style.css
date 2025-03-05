@@ -706,17 +706,31 @@ input[type='checkbox']:checked ~ .menu .bottom {
 }
 
 .mandala-container svg .mandala-ring {
-	transform-origin: center;
-	-webkit-transform-origin: center;
+	/* transform-origin: center; */
+	/* -webkit-transform-origin: center; */
+
+	/* transform-origin: 337.5px 337.5px; */
+	/* Center of 675x675 SVG */
+
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+
+	width: 675px;
+	height: 675px;
+	display: block;
+
+	justify-content: center;
 
 	/* transform-origin: 337.5px 337.5px; */
 	/* Center of 675x675 SVG */
 
 	transform-box: fill-box; /* WebKit fix */
 	will-change: transform; /* Optimize for WebKit */
-	transform: translateZ(0); /* Force GPU acceleration */
 
-	overflow: visible;
+	/* transform: translateZ(0); */
+	/* Force GPU acceleration */
+
+	/* overflow: visible; */
 }
 
 @keyframes rotation {
