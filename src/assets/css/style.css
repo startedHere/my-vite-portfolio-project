@@ -701,8 +701,11 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	font-weight: 300;
 	user-select: none;
 
-	transform-origin: center;
-	-webkit-transform-origin: center;
+	transform-origin: 50% 50%;
+	-webkit-transform-origin: 50% 50%;
+
+	/* transform-origin: center; */
+	/* -webkit-transform-origin: center; */
 }
 
 .mandala-container svg .mandala-ring {
