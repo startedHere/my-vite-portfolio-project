@@ -30,9 +30,9 @@
 const navMenu = document.getElementById('nav-menu');
 const menuToggle = document.getElementById('animated-toggle-button');
 const menuCheckbox = document.getElementById('hamburger');
-
 const navLink = document.querySelectorAll('.nav__link');
 
+/*
 if (menuToggle) {
 	menuToggle.addEventListener('click', () => {
 		menuCheckbox.checked = !menuCheckbox.checked;
@@ -47,6 +47,70 @@ if (menuToggle) {
 		});
 	});
 }
+*/
+
+//_ Hide Menu Function...
+const hideMenu = () => {
+	menuCheckbox.checked = false;
+	navMenu.classList.remove('show-menu');
+
+	menuToggle.classList.remove('active'); // Reset Toggle Button Animation State
+};
+
+//_ Show Menu Function
+const showMenu = () => {
+	menuCheckbox.checked = true;
+	navMenu.classList.add('show-menu');
+	menuToggle.classList.add('active'); // Set Toggle Button Animation State
+};
+
+//_ Reset Nav Menu state on page load
+/*
+window.addEventListener('load', () => {
+	hideMenu();
+	// From the "hideMenu" Function, Ensure menu is closed('show-menu' is removed)
+	// and MenuToggle Button is in its Initial State (Active is Removed)
+});
+*/
+
+window.addEventListener('load', hideMenu);
+
+//_ Toggle Nav Menu...
+if (menuToggle) {
+	// menuToggle.addEventListener('click', () => {
+
+	menuToggle.addEventListener('click', e => {
+		// Stop the click from propagating to the document
+		e.stopPropagation();
+
+		// menuCheckbox.checked = !menuCheckbox.checked;
+		// navMenu.classList.toggle('show-menu');
+
+		if (navMenu.classList.contains('show-menu')) {
+			hideMenu();
+		} else {
+			showMenu();
+		}
+	});
+}
+
+//_ Click Event Handler For Nav Links
+navLink.forEach(link => {
+	// link.addEventListener('click', hideMenu);
+
+	link.addEventListener('click', e => {
+		e.stopPropagation(); // Prevent click from bubbling to document
+		hideMenu();
+	});
+});
+
+//_ Click Outside of Nav Menu to Close...
+document.addEventListener('click', e => {
+	// Check if menu is open and click is outside navMenu and menuToggle
+	if (navMenu.classList.contains('show-menu') && !navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+		hideMenu();
+	}
+});
 
 // ! Blur Header On-Scroll...
 ////////////////////////////////////////////////////////////////
