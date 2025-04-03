@@ -1880,9 +1880,9 @@ path#bottom {
 		margin-bottom: 1rem;
 	}
 
-	/* .mymind__data .mymind__description {
-		padding: 1rem;
-	} */
+	.mymind__data .mymind__description {
+		padding: 3rem;
+	}
 
 	.skills__content {
 		grid-template-columns: max-content;
