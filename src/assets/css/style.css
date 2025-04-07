@@ -954,9 +954,9 @@ input[type='checkbox']:checked ~ .menu .bottom {
 	/* margin-top: -20%; */
 }
 
-/* .mymind__description {
-	padding: 1rem;
-} */
+.mymind__description {
+	padding: 0 3rem;
+}
 
 /* .mymind__description {
 	margin-top: -1rem;
@@ -1880,9 +1880,9 @@ path#bottom {
 		margin-bottom: 1rem;
 	}
 
-	.mymind__data .mymind__description {
+	/* .mymind__data .mymind__description {
 		padding: 3rem 3rem;
-	}
+	} */
 
 	.skills__content {
 		grid-template-columns: max-content;
@@ -1914,9 +1914,9 @@ path#bottom {
 		justify-content: center;
 	}
 
-	.mymind__data .mymind__description {
+	/* .mymind__data .mymind__description {
 		padding: 2rem 2rem;
-	}
+	} */
 
 	.services__container,
 	.projects__container,
