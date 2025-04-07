@@ -1914,9 +1914,9 @@ path#bottom {
 		justify-content: center;
 	}
 
-	/* .mymind__data .mymind__description {
-		padding: 2rem 2rem;
-	} */
+	.mymind__data .mymind__description {
+		padding: 0;
+	}
 
 	.services__container,
 	.projects__container,
