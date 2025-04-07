@@ -955,7 +955,7 @@ input[type='checkbox']:checked ~ .menu .bottom {
 }
 
 .mymind__description {
-	padding: 0 2rem;
+	padding: 0 1.5rem;
 }
 
 /* .mymind__description {
