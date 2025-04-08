@@ -699,6 +699,15 @@ const scrollUp = () => {
 };
 window.addEventListener('scroll', scrollUp);
 
+//! For Smooth Scroll Up...
+///////////////////////////////////////////////////////////////
+document.querySelector('.scrollup').addEventListener('click', () => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth', // Smooth scrolling, speed depends on browser
+	});
+});
+
 /*
 //! Scroll Sections Active Link...
 /////////////////////////////////////////
