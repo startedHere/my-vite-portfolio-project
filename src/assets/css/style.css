@@ -1591,11 +1591,21 @@ span.feedback {
 /* .test__beta a.feedback:after { */
 /* a.feedback:after { */
 span.feedback:after {
-	-webkit-transition: background 0.2s, -webkit-transform 0.2s;
-	-moz-transition: background 0.2s, -moz-transform 0.2s;
-	-o-transition: background 0.2s, -o-transform 0.2s;
-	-ms-transition: background 0.2s, -ms-transform 0.2s;
-	transition: background 0.2s, transform 0.2s;
+	-webkit-transition:
+		background 0.2s,
+		-webkit-transform 0.2s;
+	-moz-transition:
+		background 0.2s,
+		-moz-transform 0.2s;
+	-o-transition:
+		background 0.2s,
+		-o-transform 0.2s;
+	-ms-transition:
+		background 0.2s,
+		-ms-transform 0.2s;
+	transition:
+		background 0.2s,
+		transform 0.2s;
 	border-radius: 30px;
 	position: absolute;
 	visibility: hidden;
@@ -1655,7 +1665,9 @@ path#bottom {
   You can even delete these 4 lines.
   only the transition one is important.
   */
-	transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 	stroke-dasharray: 295px 1000px;
 }
@@ -1688,19 +1700,43 @@ path#bottom {
 .loading-start #top,
 .loading-start #bottom {
 	/* same goes here*/
-	transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+	transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
 	stroke-dasharray: 10px 1000px;
 }
+
+/* @keyframes dash-rotate {
+	from {
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dashoffset: -1000px;
+	}
+} */
 
 /* .loading-progress .test__beta #top,
 .loading-progress .test__beta #bottom { */
 .loading-progress #top,
 .loading-progress #bottom {
-	-webkit-transition: stroke-dashoffset 3s linear, stroke-dasharray 1s linear;
-	-moz-transition: stroke-dashoffset 3s linear, stroke-dasharray 1s linear;
-	-o-transition: stroke-dashoffset 3s linear, stroke-dasharray 1s linear;
-	-ms-transition: stroke-dashoffset 3s linear, stroke-dasharray 1s linear;
-	transition: stroke-dashoffset 3s linear, stroke-dasharray 1s linear;
+	/* stroke-dasharray: 10px 1000px;
+	animation: dash-rotate 3.5s linear infinite; */
+
+	-webkit-transition:
+		stroke-dashoffset 15s linear,
+		stroke-dasharray 1s linear;
+	-moz-transition:
+		stroke-dashoffset 15s linear,
+		stroke-dasharray 1s linear;
+	-o-transition:
+		stroke-dashoffset 15s linear,
+		stroke-dasharray 1s linear;
+	-ms-transition:
+		stroke-dashoffset 15s linear,
+		stroke-dasharray 1s linear;
+	transition:
+		stroke-dashoffset 15s linear,
+		stroke-dasharray 1s linear;
 	stroke-dasharray: 10px 1000px;
 	stroke-dashoffset: -150px;
 }
@@ -1720,15 +1756,25 @@ path#bottom {
 
 /* .loading-end .test__beta #top { */
 .loading-end #top {
-	-webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-webkit-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-moz-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-o-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-ms-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 	stroke-dasharray: 30px 1000px;
 	stroke-dashoffset: -518px;
@@ -1736,15 +1782,25 @@ path#bottom {
 
 /* .loading-end .test__beta #bottom { */
 .loading-end #bottom {
-	-webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-webkit-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-moz-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-o-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	-ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	-ms-transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-	transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+	transition:
+		stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+		stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
 		stroke 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 	stroke-dasharray: 10px 1000px;
 	stroke-dashoffset: -490px;
@@ -1844,7 +1900,9 @@ path#bottom {
 	font-size: 1.25rem;
 	box-shadow: 0 4px 12px hsla(228, 15%, 8%, 0.4);
 	z-index: var(--z-tooltip);
-	transition: bottom 0.4s, transform 0.4s;
+	transition:
+		bottom 0.4s,
+		transform 0.4s;
 }
 
 .scrollup:hover {

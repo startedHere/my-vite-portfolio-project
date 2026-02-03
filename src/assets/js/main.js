@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				});
 			},
 			// { threshold: 0.2 } // Start animation when 20% of the element is in view
-			{ threshold: 0.2 } //  Start Animation based on the percentage of it that is On-focus(In View-port)
+			{ threshold: 0.2 }, //  Start Animation based on the percentage of it that is On-focus(In View-port)
 		);
 
 		observer.observe(mandalaEffect);
@@ -333,7 +333,7 @@ containers.forEach(container => {
 					attr: { d: start },
 					ease: 'elastic.out(3,0.5)',
 				},
-				'<20%'
+				'<20%',
 			);
 
 			timeLine.to(
@@ -345,7 +345,7 @@ containers.forEach(container => {
 					duration: 0.5,
 					ease: 'Power2.easeOut',
 				},
-				'<5%'
+				'<5%',
 			);
 		}
 	});
@@ -366,7 +366,7 @@ containers.forEach(container => {
 	});
 
 	//_ Input Validation...
-	////////////////////////////////////////
+	////////////////////////////////////////////////////////////
 	input.addEventListener('input', e => {
 		if (e.target.type === 'text') {
 			let inputText = e.target.value;
